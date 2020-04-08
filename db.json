@@ -1,20 +1,12 @@
 {
   "contacts": [
     {
-      "name": null,
-      "address": null,
-      "email": null,
-      "phone": null,
+      "name": "null",
+      "address": "null",
+      "email": "null",
+      "phone": "null",
       "company": "",
       "id": 1
-    },
-    {
-      "name": "Julia Veronica",
-      "address": "dfsdf",
-      "email": "julia.veronicagdu@gmail.com",
-      "phone": "085363617950",
-      "company": "juve",
-      "id": 2
     }
   ]
 }

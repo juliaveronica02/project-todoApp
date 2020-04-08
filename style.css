@@ -37,7 +37,7 @@
     height: 10em;
     width: 10em;
     margin-top: 0.5em;
-    margin-left: 5em;
+    margin-left: 7em;
     margin-right: 1em;
 }
 .ccenter{
@@ -78,6 +78,7 @@
     color: black;
 }
 .table{
+  text-align: center;
     margin-top: 2em;
     Bottom-top: 2em;
     width: 80%;
