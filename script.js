@@ -32,48 +32,72 @@ axios.get('http://localhost:3000/contacts')
 // })
 
     //cara 2 menampilkan data pakai card.
-    response.data.forEach(item => {
-        const {
-            id,
-            name,
-            address,
-            email,
-            phone,
-            company
-        } = item;
-        //div ini untuk id card
-        const itemHTML = `
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <img class="circularsquare" src="./4.jpg" alt=""
-                    style="width: 100px; height: 100px;">
-                <div class="ccenter">
-                Id: ${id}
-                <br>
-                Name: ${name}
-                <br>
-                Address: ${address}
-                <br>
-                Email: ${email}
-                <br>
-                Phone: ${phone}
-                <br>
-                Company: ${company}
-                <br>
-                <button onclick ="ganti(${id})">Change</button>
-                <button onclick ="hapus(${id})">Delete</button>
-                </div>
-            </div>
-   </div>
-   </div>
-    `;
-        listContact.innerHTML += itemHTML;
-    })
+//     response.data.forEach(item => {
+//         const {
+//             id,
+//             name,
+//             address,
+//             email,
+//             phone,
+//             company
+//         } = item;
+//         //div ini untuk id card
+//         const itemHTML = `
+//         <div class="col-md-4">
+//             <div class="card" style="width: 18rem;">
+//                 <div class="card-body">
+//                 <img class="circularsquare" src="./4.jpg" alt=""
+//                     style="width: 100px; height: 100px;">
+//                 <div class="ccenter">
+//                 Id: ${id}
+//                 <br>
+//                 Name: ${name}
+//                 <br>
+//                 Address: ${address}
+//                 <br>
+//                 Email: ${email}
+//                 <br>
+//                 Phone: ${phone}
+//                 <br>
+//                 Company: ${company}
+//                 <br>
+//                 <button onclick ="ganti(${id})">Change</button>
+//                 <button onclick ="hapus(${id})">Delete</button>
+//                 </div>
+//             </div>
+//    </div>
+//    </div>
+//     `;
+//         listContact.innerHTML += itemHTML;
+//     })
+// })
+//         .catch((pesanError)=>{
+//             console.log(pesanError);
+// })
+
+//cara 3 card.
+response.data.forEach(item => {
+    const { id, name, address, email, phone, company } = item;
+const itemHTML = `
+<div class="card">
+        <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
+          <h5 class="card-title">Name : ${name}</h5>
+          <p class="card-text">Email : ${email}</p>
+          <p class="card-text">Address : ${address}</p>
+          <p class="card-text">phone : ${phone}</p>
+          <p class="card-text">company : ${company}</p>
+          <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>&nbsp;&nbsp;
+        </div>
+    </div>
+</div>`;
+listContact.innerHTML += itemHTML;
 })
-        .catch((pesanError)=>{
-            console.log(pesanError);
 })
+.catch((pesanError) => {
+console.log(pesanError);
+});
 
 //cara 3 menampilkan data menggunakan table.
 axios.get('http://localhost:3000/contacts')
@@ -103,6 +127,8 @@ axios.get('http://localhost:3000/contacts')
 .catch((pesanError) => {
     console.log(pesanError);
 });
+
+
 document.getElementById('simpanContact').addEventListener('submit', function (event) {
     // event.preventDefault();
 

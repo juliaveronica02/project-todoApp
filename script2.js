@@ -38,6 +38,7 @@ axios.get('http://localhost:3000/contacts')
             const { id, name, address, email, phone, company } = item;
 
             //div ini untuk id card 1.
+
             // const itemHTML = `
             // <div class="col-md-4">
             //     <div class="card" style="width: 18rem;">
@@ -57,31 +58,56 @@ axios.get('http://localhost:3000/contacts')
             // </div>`;
 
             //div card 2.
-            const itemHTML = `
-            <div class="col-md-4">
-                <div class="card" style="width: 21rem;">
-                <img class="circularsquare" src="./4.jpg" alt=""
-                            style="width: 100px; height: 100px;">
-                    <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
-                      <h5 class="card-title">Name : ${name}</h5>
-                      <p class="card-text">Email : ${email}</p>
-                      <p class="card-text">Address : ${address}</p>
-                      <p class="card-text">phone : ${phone}</p>
-                      <p class="card-text">company : ${company}</p>
-                      <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>&nbsp;&nbsp;
-                    </div>
-                </div>
-            </div>`;
-            listContact.innerHTML += itemHTML;
-        })
-    })
-    .catch((pesanError) => {
-        console.log(pesanError);
-    });
+
+    //         const itemHTML = `
+    //         <div class="col-md-4">
+    //             <div class="card" style="width: 21rem;">
+    //             <img class="circularsquare" src="./4.jpg" alt=""
+    //                         style="width: 100px; height: 100px;">
+    //                 <div class="card-body">
+    //                 <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
+    //                   <h5 class="card-title">Name : ${name}</h5>
+    //                   <p class="card-text">Email : ${email}</p>
+    //                   <p class="card-text">Address : ${address}</p>
+    //                   <p class="card-text">phone : ${phone}</p>
+    //                   <p class="card-text">company : ${company}</p>
+    //                   <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    //                   <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>&nbsp;&nbsp;
+    //                 </div>
+    //             </div>
+    //         </div>`;
+    //         listContact.innerHTML += itemHTML;
+    //     })
+    // })
+    // .catch((pesanError) => {
+    //     console.log(pesanError);
+    // });
+
+//     //cara 3 card.
+
+//     const itemHTML = `
+//     <div class="card">
+//             <div class="card-body">
+//             <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
+//               <h5 class="card-title">Name : ${name}</h5>
+//               <p class="card-text">Email : ${email}</p>
+//               <p class="card-text">Address : ${address}</p>
+//               <p class="card-text">phone : ${phone}</p>
+//               <p class="card-text">company : ${company}</p>
+//               <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//               <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>&nbsp;&nbsp;
+//             </div>
+//         </div>
+//     </div>`;
+//     listContact.innerHTML += itemHTML;
+// })
+// })
+// .catch((pesanError) => {
+// console.log(pesanError);
+// });
 
     // looping using table 
+    
 axios.get('http://localhost:3000/contacts')
 .then((response) => {
     const listContact = document.getElementById("tableData")
