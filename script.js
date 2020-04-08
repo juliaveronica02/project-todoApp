@@ -1,56 +1,53 @@
 let data = [];
+// looping using table 
 axios.get('http://localhost:3000/contacts')
     .then((response) => {
-        console.log(response)
-        const listContact = document.getElementById("#contacts")
+        const listContact = document.getElementById("tableData")
         data = response.data;
-
+        console.log(data)
+        
         response.data.forEach(item => {
-            const {
-                id,
-                name,
-                address,
-                email,
-                phone,
-                company
-            } = item;
+            const { id, name, address, email, phone, company } = item;
+            //div ini untuk id card
+            const itemHTML = `
+            <tr>
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>${address}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
+                <td>${company}</td>
+            </tr>`;
+            listContact.innerHTML += itemHTML;
+        })
+    })
+    .catch((pesanError) => {
+        console.log(pesanError);
+    });
+
+// looping using card 
+axios.get('http://localhost:3000/contacts')
+    .then((response) => {
+        const listContact = document.getElementById("cardData")
+        data = response.data;
+        console.log(data)
+        
+        response.data.forEach(item => {
+            const { id, name, address, email, phone, company } = item;
             //div ini untuk id card
             const itemHTML = `
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-body">
-                    <img class="circularsquare" src="./4.jpg" alt=""
-                        style="width: 100px; height: 100px;">
-                    <div class="ccenter">
-                    <li>
-                    Id: ${id}
-                    <br>
-                    Name: ${name}
-                    <br>
-                    Address: ${address}
-                    <br>
-                    Email: ${email}
-                    <br>
-                    Phone: ${phone}
-                    <br>
-                    Company: ${company}
-                    <br>
-                    <button onclick ="ganti(${id})">Change</button>
-                    <button onclick ="hapus(${id})">Delete</button>
-                    </li>
+                      <h5 class="card-title">Name : ${name}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
+                      <p class="card-text">Email : ${email}</p>
+                      <p class="card-text">Address : ${address}</p>
+                      <p class="card-text">phone : ${phone}</p>
+                      <p class="card-text">company : ${company}</p>
                     </div>
                 </div>
-       </div>
-       </div>
-       <tr id="contacts">
-       <th>${id}</th>
-       <td>${name}</td>
-       <td>${address}</td>
-       <td>${email}</td>
-       <td>${phone}</td>
-       <td>${company}</td>
-     </tr>
-        `;
+            </div>`;
             listContact.innerHTML += itemHTML;
         })
     })
