@@ -8,7 +8,7 @@ axios.get('http://localhost:3000/contacts')
     response.data.forEach(item =>{
         const {id, name, address, email, phone, company} = item;
         const itemHTML = `<li>
-        <img src=""
+        <img src="4.jpg"/>
         Id: ${id}
         <br>
         Name: ${name}
