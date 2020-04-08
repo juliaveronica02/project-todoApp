@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -17,7 +17,34 @@
     <h2 class="huruf">Input Contact</h2>
     <br>
     <form action="" id="simpanContact">
-        <label>Name &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <input type="text" class="test"
+        <!-- untuk input nama -->
+        <div class="form-group">
+            <label for="">Name </label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <!-- untuk input email -->
+        <div class="form-group">
+            <label for="">Email </label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <!-- untuk input alamat rumah -->
+          <div class="form-group">
+            <label for="">Address</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+          <!-- untuk input nomor telepon -->
+          <div class="form-group">
+            <label for="">Phone</label>
+            <input type="text" class="form-control" id="phone">
+          </div>
+          <!-- untuk input nama perusahaan -->
+          <div class="form-group">
+            <label for="">Company</label>
+            <input type="text" class="form-control" id="company">
+          </div>
+
+          <!-- cara kedua untuk input pakai label -->
+        <!-- <label>Name &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <input type="text" class="test"
                 name="name" id="name" class="padding" /></label>
         <br>
         <label>Address&nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; &nbsp; &nbsp;<input type="text" class="test" name="address"
@@ -31,13 +58,18 @@
         <br>
         <label>Company&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <input type="text" class="test" name="company" id="company"
                 class="padding" /></label>
-        <br>
+        <br> -->
         <div class="tengah">
             <button type="submit" class="btn btn-outline-primary">Save</button>
         </div>
 </div>
     </form>
     <div id="contacts" class="row">
+    </div>
+    <div  class="container">
+        <div class="row" id="cardData">
+            
+        </div>
     </div>
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
@@ -57,11 +89,7 @@
         </table>
     </div>
 
-    <div  class="container">
-        <div class="row" id="cardData">
-            
-        </div>
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>

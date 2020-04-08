@@ -1,29 +1,30 @@
 let data = [];
-// looping using table 
-axios.get('http://localhost:3000/contacts')
-    .then((response) => {
-        const listContact = document.getElementById("tableData")
-        data = response.data;
-        console.log(data)
+
+    // looping using table cara 2
+// axios.get('http://localhost:3000/contacts')
+//     .then((response) => {
+//         const listContact = document.getElementById("tableData")
+//         data = response.data;
+//         console.log(data)
         
-        response.data.forEach(item => {
-            const { id, name, address, email, phone, company } = item;
-            //div ini untuk id card
-            const itemHTML = `
-            <tr>
-                <td>${id}</td>
-                <td>${name}</td>
-                <td>${address}</td>
-                <td>${email}</td>
-                <td>${phone}</td>
-                <td>${company}</td>
-            </tr>`;
-            listContact.innerHTML += itemHTML;
-        })
-    })
-    .catch((pesanError) => {
-        console.log(pesanError);
-    });
+//         response.data.forEach(item => {
+//             const { id, name, address, email, phone, company } = item;
+//             //div ini untuk id card
+//             const itemHTML = `
+//             <tr>
+//                 <td>${id}</td>
+//                 <td>${name}</td>
+//                 <td>${address}</td>
+//                 <td>${email}</td>
+//                 <td>${phone}</td>
+//                 <td>${company}</td>
+//             </tr>`;
+//             listContact.innerHTML += itemHTML;
+//         })
+//     })
+//     .catch((pesanError) => {
+//         console.log(pesanError);
+//     });
 
 // looping using card 
 axios.get('http://localhost:3000/contacts')
@@ -34,17 +35,41 @@ axios.get('http://localhost:3000/contacts')
         
         response.data.forEach(item => {
             const { id, name, address, email, phone, company } = item;
-            //div ini untuk id card
+
+            //div ini untuk id card 1.
+            // const itemHTML = `
+            // <div class="col-md-4">
+            //     <div class="card" style="width: 18rem;">
+            //     <img class="circularsquare" src="./4.jpg" alt=""
+            //                 style="width: 100px; height: 100px;">
+            //         <div class="card-body">
+            //         <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
+            //           <h5 class="card-title">Name : ${name}</h5>
+            //           <p class="card-text">Email : ${email}</p>
+            //           <p class="card-text">Address : ${address}</p>
+            //           <p class="card-text">phone : ${phone}</p>
+            //           <p class="card-text">company : ${company}</p>
+            //           <button onclick="ganti(${id})"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            //           <button onclick="hapus(${id})"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>
+            //         </div>
+            //     </div>
+            // </div>`;
+
+            //div card 2.
             const itemHTML = `
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" style="width: 18rem;">
+                <img class="circularsquare" src="./4.jpg" alt=""
+                            style="width: 100px; height: 100px;">
                     <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
                       <h5 class="card-title">Name : ${name}</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">${id}</h6>
                       <p class="card-text">Email : ${email}</p>
                       <p class="card-text">Address : ${address}</p>
                       <p class="card-text">phone : ${phone}</p>
                       <p class="card-text">company : ${company}</p>
+                      <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>
                     </div>
                 </div>
             </div>`;
@@ -54,6 +79,32 @@ axios.get('http://localhost:3000/contacts')
     .catch((pesanError) => {
         console.log(pesanError);
     });
+
+    // looping using table 
+axios.get('http://localhost:3000/contacts')
+.then((response) => {
+    const listContact = document.getElementById("tableData")
+    data = response.data;
+    console.log(data)
+    
+    response.data.forEach(item => {
+        const { id, name, address, email, phone, company } = item;
+        //div ini untuk id card
+        const itemHTML = `
+        <tr>
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>${address}</td>
+            <td>${email}</td>
+            <td>${phone}</td>
+            <td>${company}</td>
+        </tr>`;
+        listContact.innerHTML += itemHTML;
+    })
+})
+.catch((pesanError) => {
+    console.log(pesanError);
+});
 
 document.getElementById('simpanContact').addEventListener('submit', function (event) {
     // event.preventDefault();

@@ -1,11 +1,11 @@
 {
   "contacts": [
     {
-      "name": "Julia Veronica",
-      "address": "dfsdf",
-      "email": "julia.veronicagdu@gmail.com",
-      "phone": "085363617950",
-      "company": "tidak ada",
+      "name": null,
+      "address": null,
+      "email": null,
+      "phone": null,
+      "company": "",
       "id": 1
     },
     {
@@ -13,24 +13,8 @@
       "address": "dfsdf",
       "email": "julia.veronicagdu@gmail.com",
       "phone": "085363617950",
-      "company": "6fhfh",
-      "id": 3
-    },
-    {
-      "name": "Julia Veronica",
-      "address": "dfsdf",
-      "email": "juliavero2206@gmail.com",
-      "phone": "085363617950",
-      "company": "324ef",
-      "id": 4
-    },
-    {
-      "name": "Julia Veronica",
-      "address": "dfsdf",
-      "email": "julia.veronicagdu@gmail.com",
-      "phone": "085363617950",
-      "company": "qwer",
-      "id": 5
+      "company": "juve",
+      "id": 2
     }
   ]
 }
