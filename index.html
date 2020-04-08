@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body >
+    <div class="wrapper">
+    <h1 class="huruf">Contact App</h1>
+    <h2 class="huruf">Input Contact</h2>
+    <br>
+    <form action="" id="simpanContact">
+        <label>Name &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <input type="text" class="test"
+                name="name" id="name" class="padding" /></label>
+        <br>
+        <label>Address&nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; &nbsp; &nbsp;<input type="text" class="test" name="address"
+                id="address" class="padding" /> </label>
+        <br>
+        <label>Email&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; &nbsp; <input type="email" class="test"
+                name="email" id="email" class="padding" /></label>
+        <br>
+        <label>Phone&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;: &nbsp; &nbsp; <input type="number" class="test"
+                name="phone" id="phone" class="padding" /></label>
+        <br>
+        <label>Company&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <input type="text" class="test" name="company" id="company"
+                class="padding" /></label>
+        <br>
+        <div class="tengah">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+    <div id="contacts">
+        <ol></ol>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

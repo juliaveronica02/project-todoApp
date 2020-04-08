@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "name": "dfdshfoif",
+      "address": "safoasjfoas4",
+      "email": "qwer",
+      "phone": "085363617950",
+      "company": "safsafas",
+      "id": 4
+    },
+    {
+      "name": "Julia Veronica",
+      "address": "dfsdf",
+      "email": "julia.veronicagdu@gmail.com",
+      "phone": "085363617950",
+      "company": "tidak ada",
+      "id": 5
+    },
+    {
+      "name": "Julia Veronica",
+      "address": "Bengkong",
+      "email": "julia.veronicagdu@gmail.com",
+      "phone": "085363617950",
+      "company": "juve",
+      "id": 6
+    }
+  ]
+}

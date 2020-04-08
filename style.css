@@ -1,0 +1,32 @@
+#simpanContact{
+    padding-left: 4em;
+    padding-bottom: 1em;
+}
+.test{
+    margin-bottom: 20px;
+}
+.wrapper {
+    width: 450px;
+    margin: 5px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125), -1px -1px 2px rgba(0, 0, 0, 0.125);
+  }
+  .huruf{
+      text-align: center;
+  }
+  .tengah{
+      text-align: center;   
+      padding-right: 4em;
+  }
+
+    li{
+    margin-left: 2px;
+    margin-bottom: 30px;
+    list-style-type: disc;
+  }
+  .img-cuaca{
+    width: 300px;
+    margin-top: -50px;
+  }
