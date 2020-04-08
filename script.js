@@ -5,11 +5,10 @@ axios.get('http://localhost:3000/contacts')
     const listContact = document.getElementById("contacts")
     data = response.data;
     
-    //cara 1.
+    // cara 1 menampilkan data biasa.
 //     response.data.forEach(item =>{
 //         const {id, name, address, email, phone, company} = item;
 //         const itemHTML = `
-//         <li>
 //         Id: ${id}
 //         <br>
 //         Name: ${name}
@@ -24,11 +23,15 @@ axios.get('http://localhost:3000/contacts')
 //         <br>
 //         <button onclick ="ganti(${id})">Change</button>
 //         <button onclick ="hapus(${id})">Delete</button>
-//         </li>`;
+//         `;
 //         listContact.innerHTML +=itemHTML;
 // })
+// })
+// .catch((pesanError) => {
+//     console.error(pesanError);
+// })
 
-    //cara 2.
+    //cara 2 menampilkan data pakai card.
     response.data.forEach(item => {
         const {
             id,
@@ -67,10 +70,62 @@ axios.get('http://localhost:3000/contacts')
     `;
         listContact.innerHTML += itemHTML;
     })
-    .catch((pesanError)=>{
-        console.log(pesanError);
-    });
 })
+        .catch((pesanError)=>{
+            console.log(pesanError);
+})
+
+//cara 3 menampilkan data menggunakan table.
+axios.get('http://localhost:3000/contacts')
+.then((response) => {
+    const listContact = document.getElementById("tableData")
+    data = response.data;
+    console.log(data)
+    
+    response.data.forEach(item => {
+        const { id, name, address, email, phone, company } = item;
+        //input ke table
+        const itemHTML = `
+        <tr>
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>${address}</td>
+            <td>${email}</td>
+            <td>${phone}</td>
+            <td>${company}</td>
+            <td>
+            <button onclick="ganti(${id})"class="btn btn-outline-primary"><i class="fa fa-pencil-square">&nbsp;&nbsp;Change</button></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+            <button onclick="hapus(${id})" class="btn btn-outline-danger"><i class="fa fa-ban">&nbsp;&nbsp;Delete</button></i>
+        </tr>`;
+        listContact.innerHTML += itemHTML;
+    })
+})
+.catch((pesanError) => {
+    console.log(pesanError);
+});
+document.getElementById('simpanContact').addEventListener('submit', function (event) {
+    // event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const company = document.getElementById('company').value;
+    //untuk post
+    const data = {
+        name: name,
+        address: address,
+        email: email,
+        phone: phone,
+        company: company
+    }
+    axios.post('http://localhost:3000/contacts', data).then(res => {
+        console.log(res);
+        window.alert('data berhasil di tambah');
+    }).catch(err => {
+        console.log(err);
+    });
+});
 
 const hapus = id => {
     axios.delete(`http://localhost:3000/contacts/${id}`)
